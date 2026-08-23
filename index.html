@@ -1,0 +1,1245 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>UNDERWORLD: L3EON</title>
+<style>
+:root{
+--bg:#07050b;--panel:#110d18;--line:#44215f;
+--purple:#b84cff;--pink:#e65cff;--text:#f7f3fb;
+--muted:#aaa0b5;--good:#75e09a;--bad:#ff6d7a;--gold:#ffd45c
+}
+*{box-sizing:border-box}
+body{
+margin:0;
+background:radial-gradient(circle at top,#321244 0,#100815 35%,#07050b 72%);
+color:var(--text);
+font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif
+}
+button{font:inherit;color:inherit}
+.wrap{max-width:980px;margin:auto;padding:18px 14px 90px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:16px}
+.logo{font-size:34px;font-weight:950;letter-spacing:-2px}
+.logo span{color:var(--purple)}
+.age{
+border:1px solid #75429b;
+background:#120b19;
+border-radius:30px;
+padding:12px 18px;
+font-weight:900
+}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.stat,.card{
+background:linear-gradient(180deg,#15101d,#0e0a13);
+border:1px solid #34203f;
+border-radius:20px
+}
+.stat{padding:14px}
+.stat small{display:block;color:var(--muted);font-weight:800}
+.stat b{display:block;font-size:25px;margin-top:5px}
+.money{color:var(--good)}
+.heat{color:#ff8a6b}
+.fame{color:var(--gold)}
+.card{padding:18px;margin-top:14px}
+.hero{padding:22px}
+.eyebrow{
+color:#d17aff;
+font-weight:900;
+letter-spacing:1.2px;
+font-size:13px
+}
+.hero h1{font-size:36px;margin:5px 0 8px}
+.hero p,.muted{color:var(--muted);line-height:1.55}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.section-title{font-size:20px;font-weight:950;margin:0 0 12px}
+.choice{
+width:100%;
+text-align:left;
+padding:16px;
+background:#15101c;
+border:1px solid #45245a;
+border-radius:16px;
+cursor:pointer;
+transition:.15s
+}
+.choice:hover{
+transform:translateY(-1px);
+border-color:#b14bf2;
+background:#1c1325
+}
+.choice b{display:block;font-size:17px}
+.choice small{display:block;color:var(--muted);margin-top:4px}
+.bar{
+height:9px;
+background:#25182d;
+border-radius:20px;
+overflow:hidden;
+margin-top:8px
+}
+.fill{
+height:100%;
+background:linear-gradient(90deg,#8c45ef,#e055e5);
+border-radius:20px
+}
+.row{
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:12px
+}
+.pill{
+border:1px solid #56306f;
+background:#17101f;
+border-radius:999px;
+padding:7px 10px;
+color:#d6c8df;
+font-size:12px;
+font-weight:900
+}
+.actions{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:9px
+}
+.action{
+padding:14px 10px;
+background:#17111f;
+border:1px solid #442154;
+border-radius:15px;
+cursor:pointer;
+font-weight:900
+}
+.action:hover{border-color:#bf55ff}
+.feed{max-height:280px;overflow:auto}
+.event{
+padding:11px 0;
+border-bottom:1px solid #28172f;
+color:#d7cfdd
+}
+.event strong{color:#fff}
+.success{color:var(--good)}
+.danger{color:var(--bad)}
+.modal{
+position:fixed;
+inset:0;
+background:#0009;
+display:none;
+align-items:flex-end;
+justify-content:center;
+padding:12px;
+z-index:10
+}
+.modal.open{display:flex}
+.modalbox{
+max-width:680px;
+width:100%;
+background:#120d18;
+border:1px solid #63327e;
+border-radius:24px;
+padding:20px;
+box-shadow:0 20px 80px #000
+}
+.modalbox h2{margin-top:0}
+.close{
+float:right;
+border:0;
+background:#261631;
+border-radius:50%;
+width:36px;
+height:36px;
+cursor:pointer
+}
+.two{
+display:grid;
+grid-template-columns:1.2fr .8fr;
+gap:12px
+}
+.footer{
+color:#75687d;
+text-align:center;
+font-size:12px;
+margin-top:18px
+}
+@media(max-width:700px){
+.stats{grid-template-columns:repeat(2,1fr)}
+.grid,.two{grid-template-columns:1fr}
+.actions{grid-template-columns:repeat(2,1fr)}
+.hero h1{font-size:29px}
+}
+</style>
+</head>
+
+<body>
+
+<div class="wrap">
+
+<header class="top">
+<div class="logo">L3<span>EON</span></div>
+<div class="age" id="age">AGE 18</div>
+</header>
+
+<section class="stats">
+
+<div class="stat">
+<small>💵 MONEY</small>
+<b class="money" id="money">$500</b>
+</div>
+
+<div class="stat">
+<small>❤️ HEALTH</small>
+<b id="health">80</b>
+</div>
+
+<div class="stat">
+<small>⭐ FAME</small>
+<b class="fame" id="fame">0</b>
+</div>
+
+<div class="stat">
+<small>🚨 HEAT</small>
+<b class="heat" id="heat">0</b>
+</div>
+
+</section>
+
+<section class="card hero">
+
+<div class="eyebrow">
+BALTIMORE • UNDERWORLD SIM
+</div>
+
+<h1>UNDERWORLD: L3EON</h1>
+
+<p>
+You start with a little cash, a big name to build, and a city full of opportunities.
+Make choices, manage risk, build your crew, buy properties, survive setbacks,
+and decide what kind of legend you become.
+</p>
+
+<div class="row">
+<span class="pill" id="status">NEIGHBORHOOD</span>
+<span class="pill" id="year">YEAR 1</span>
+</div>
+
+</section>
+
+<div class="two">
+
+<section class="card">
+
+<h2 class="section-title">📊 CHARACTER</h2>
+
+<div class="row">
+<span>🧠 Intelligence</span>
+<b id="intel">60</b>
+</div>
+
+<div class="bar">
+<div class="fill" id="intelBar"></div>
+</div>
+
+<div class="row" style="margin-top:12px">
+<span>👀 Looks</span>
+<b id="looks">65</b>
+</div>
+
+<div class="bar">
+<div class="fill" id="looksBar"></div>
+</div>
+
+<div class="row" style="margin-top:12px">
+<span>🎤 Music Talent</span>
+<b id="music">55</b>
+</div>
+
+<div class="bar">
+<div class="fill" id="musicBar"></div>
+</div>
+
+<div class="row" style="margin-top:12px">
+<span>🗣️ Reputation</span>
+<b id="rep">10</b>
+</div>
+
+<div class="bar">
+<div class="fill" id="repBar"></div>
+</div>
+
+</section>
+
+<section class="card">
+
+<h2 class="section-title">🏙️ CITY</h2>
+
+<p class="muted" id="cityText">
+The neighborhood knows your name. Your next move is yours.
+</p>
+
+<div class="row">
+<span>📍 Location</span>
+<b id="location">Neighborhood</b>
+</div>
+
+<div class="row" style="margin-top:12px">
+<span>👥 Crew</span>
+<b id="crew">0</b>
+</div>
+
+<div class="row" style="margin-top:12px">
+<span>🏠 Properties</span>
+<b id="props">0</b>
+</div>
+
+<div class="row" style="margin-top:12px">
+<span>🏢 Businesses</span>
+<b id="biz">0</b>
+</div>
+
+</section>
+
+</div>
+
+<section class="card">
+
+<h2 class="section-title">🎮 WHAT DO YOU DO?</h2>
+
+<div class="actions">
+
+<button class="action" onclick="work()">💼 Work</button>
+
+<button class="action" onclick="hustle()">🃏 Hustle</button>
+
+<button class="action" onclick="musicCareer()">🎤 Music</button>
+
+<button class="action" onclick="rest()">🛌 Rest</button>
+
+<button class="action" onclick="explore()">🚗 Explore</button>
+
+<button class="action" onclick="business()">🏢 Business</button>
+
+<button class="action" onclick="crewAction()">👥 Crew</button>
+
+<button class="action" onclick="property()">🏠 Property</button>
+
+<button class="action" onclick="advance()">⏭️ Age Up</button>
+
+</div>
+
+</section>
+
+<section class="card">
+
+<div class="row">
+
+<h2 class="section-title" style="margin:0">
+📰 CITY FEED
+</h2>
+
+<button class="pill" onclick="clearFeed()">CLEAR</button>
+
+</div>
+
+<div class="feed" id="feed"></div>
+
+</section>
+
+<section class="card">
+
+<h2 class="section-title">
+🏆 YOUR LEGACY
+</h2>
+
+<div class="grid">
+
+<button class="choice" onclick="showProfile()">
+<b>👤 Life Profile</b>
+<small>Stats, wealth and history</small>
+</button>
+
+<button class="choice" onclick="saveGame()">
+<b>💾 Save Game</b>
+<small>Keep your current life</small>
+</button>
+
+<button class="choice" onclick="loadGame()">
+<b>📂 Load Game</b>
+<small>Restore your last save</small>
+</button>
+
+<button class="choice" onclick="newLife()">
+<b>🔄 New Life</b>
+<small>Start a completely new run</small>
+</button>
+
+</div>
+
+</section>
+
+<div class="footer">
+UNDERWORLD: L3EON • Fictional game • No real-world instructions
+</div>
+
+</div>
+
+<div class="modal" id="modal">
+
+<div class="modalbox">
+
+<button class="close" onclick="closeModal()">×</button>
+
+<div id="modalBody"></div>
+
+</div>
+
+</div>
+
+<script>
+
+const KEY='underworldL3EON';
+
+let s={
+age:18,
+money:500,
+health:80,
+fame:0,
+heat:0,
+energy:80,
+happiness:70,
+intel:60,
+looks:65,
+music:55,
+rep:10,
+crew:0,
+props:0,
+businesses:0,
+debt:0,
+location:'Neighborhood',
+status:'NEIGHBORHOOD',
+year:1,
+history:[],
+arrests:0
+};
+
+const $=id=>document.getElementById(id);
+
+const clamp=(n,a=0,b=100)=>
+Math.max(a,Math.min(b,n));
+
+const money=n=>
+'$'+Math.max(0,Math.round(n)).toLocaleString();
+
+function render(){
+
+$('age').textContent='AGE '+s.age;
+
+$('money').textContent=money(s.money);
+
+$('health').textContent=Math.round(s.health);
+
+$('fame').textContent=Math.round(s.fame);
+
+$('heat').textContent=Math.round(s.heat);
+
+$('intel').textContent=Math.round(s.intel);
+
+$('looks').textContent=Math.round(s.looks);
+
+$('music').textContent=Math.round(s.music);
+
+$('rep').textContent=Math.round(s.rep);
+
+$('crew').textContent=s.crew;
+
+$('props').textContent=s.props;
+
+$('biz').textContent=s.businesses;
+
+$('location').textContent=s.location;
+
+$('status').textContent=s.status;
+
+$('year').textContent='YEAR '+s.year;
+
+$('intelBar').style.width=s.intel+'%';
+
+$('looksBar').style.width=s.looks+'%';
+
+$('musicBar').style.width=s.music+'%';
+
+$('repBar').style.width=s.rep+'%';
+
+$('cityText').textContent=
+
+s.heat>75
+
+?'The city feels tense. Too many people are watching.'
+
+:s.fame>75
+
+?'Your name is everywhere. Attention can be power—or a problem.'
+
+:s.rep>70
+
+?'People respect the name you built. Doors are opening.'
+
+:'The neighborhood knows your name. Your next move is yours.';
+
+renderFeed();
+
+}
+
+function renderFeed(){
+
+$('feed').innerHTML=
+
+s.history.map(x=>
+
+`<div class="event ${x.cls||''}">${x.text}</div>`
+
+).join('')
+
+||
+
+'<div class="muted">Your story starts here.</div>';
+
+}
+
+function log(text,cls=''){
+
+s.history.unshift({
+text:text,
+cls:cls
+});
+
+s.history=s.history.slice(0,40);
+
+renderFeed();
+
+}
+
+function spend(n){
+
+if(s.money<n){
+
+log(
+'You cannot afford that right now.',
+'danger'
+);
+
+return false;
+
+}
+
+s.money-=n;
+
+return true;
+
+}
+
+function spendEnergy(n){
+
+if(s.energy<n){
+
+log(
+'You are too exhausted. Rest or age up.',
+'danger'
+);
+
+return false;
+
+}
+
+s.energy-=n;
+
+return true;
+
+}
+
+function work(){
+
+if(!spendEnergy(15))return;
+
+let p=180+Math.floor(Math.random()*180);
+
+s.money+=p;
+
+s.rep=clamp(s.rep+2);
+
+s.happiness=clamp(s.happiness-1);
+
+log(
+`You worked a shift and earned <strong>${money(p)}</strong>.`
+);
+
+render();
+
+}
+
+function hustle(){
+
+if(!spendEnergy(18))return;
+
+let g=100+Math.floor(Math.random()*500);
+
+if(Math.random()<.18){
+
+s.heat=clamp(s.heat+10);
+
+s.health=clamp(s.health-5);
+
+log(
+'A risky fictional underground hustle went sideways. You got out, but the city noticed.',
+'danger'
+);
+
+}else{
+
+s.money+=g;
+
+s.rep=clamp(s.rep+4);
+
+s.heat=clamp(s.heat+3);
+
+log(
+`A successful fictional underground hustle brought in <strong>${money(g)}</strong>.`
+);
+
+}
+
+render();
+
+}
+
+function musicCareer(){
+
+if(!spendEnergy(12))return;
+
+let g=60+Math.floor(Math.random()*220);
+
+s.music=clamp(s.music+2);
+
+s.fame=clamp(
+s.fame+(s.music>70?5:2)
+);
+
+s.rep=clamp(s.rep+3);
+
+s.money+=g;
+
+log(
+`You hit the studio. Music talent grew and you earned <strong>${money(g)}</strong> from a performance.`
+);
+
+render();
+
+}
+
+function rest(){
+
+s.energy=clamp(s.energy+35);
+
+s.health=clamp(s.health+5);
+
+s.happiness=clamp(s.happiness+6);
+
+log(
+'You took a night off, recovered, and cleared your head.',
+'success'
+);
+
+render();
+
+}
+
+function explore(){
+
+if(!spendEnergy(14))return;
+
+let places=[
+['Downtown',90],
+['The Harbor',120],
+['East Side',70],
+['West Side',100],
+['The Strip',150]
+];
+
+let p=places[
+Math.floor(Math.random()*places.length)
+];
+
+s.location=p[0];
+
+s.money+=p[1];
+
+s.happiness=clamp(s.happiness+3);
+
+if(Math.random()<.25){
+
+s.heat=clamp(s.heat+5);
+
+log(
+`You explored ${p[0]} and ran into a tense situation. You made it out with ${money(p[1])}.`,
+'danger'
+);
+
+}else{
+
+log(
+`You explored ${p[0]} and found an opportunity worth <strong>${money(p[1])}</strong>.`
+);
+
+}
+
+render();
+
+}
+
+function business(){
+
+openModal(`
+
+<h2>🏢 Build Your Empire</h2>
+
+<p class="muted">
+Invest in fictional businesses that generate passive income each year.
+</p>
+
+<div class="grid">
+
+<button class="choice"
+onclick="buyBiz('studio',5000)">
+
+<b>🎙️ Recording Studio — $5,000</b>
+
+<small>
+Passive income • fame
+</small>
+
+</button>
+
+<button class="choice"
+onclick="buyBiz('shop',8000)">
+
+<b>🛍️ Night Shop — $8,000</b>
+
+<small>
+Passive income • reputation
+</small>
+
+</button>
+
+<button class="choice"
+onclick="buyBiz('club',15000)">
+
+<b>🌃 Nightclub — $15,000</b>
+
+<small>
+Passive income • fame • heat
+</small>
+
+</button>
+
+</div>
+
+`);
+
+}
+
+function buyBiz(type,cost){
+
+if(!spend(cost)){
+
+closeModal();
+
+render();
+
+return;
+
+}
+
+s.businesses++;
+
+s.fame=clamp(
+s.fame+(type==='club'?8:4)
+);
+
+s.rep=clamp(s.rep+5);
+
+closeModal();
+
+log(
+`You invested ${money(cost)} into a new ${type}. Your empire is growing.`,
+'success'
+);
+
+render();
+
+}
+
+function crewAction(){
+
+openModal(`
+
+<h2>👥 Build Your Crew</h2>
+
+<p class="muted">
+Crew members improve your fictional empire, but bigger crews attract more attention.
+</p>
+
+<div class="grid">
+
+<button class="choice"
+onclick="recruit(1,1000)">
+
+<b>Recruit 1 — $1,000</b>
+
+<small>
++2 reputation • +1 heat
+</small>
+
+</button>
+
+<button class="choice"
+onclick="recruit(3,2600)">
+
+<b>Recruit 3 — $2,600</b>
+
+<small>
++6 reputation • +5 heat
+</small>
+
+</button>
+
+</div>
+
+`);
+
+}
+
+function recruit(n,cost){
+
+if(!spend(cost)){
+
+closeModal();
+
+render();
+
+return;
+
+}
+
+s.crew+=n;
+
+s.rep=clamp(
+s.rep+n*2
+);
+
+s.heat=clamp(
+s.heat+n
+);
+
+closeModal();
+
+log(
+`You recruited ${n} new crew member${n>1?'s':''}.`
+);
+
+render();
+
+}
+
+function property(){
+
+openModal(`
+
+<h2>🏠 Property</h2>
+
+<p class="muted">
+Buy safe places to live and invest in your future.
+</p>
+
+<div class="grid">
+
+<button class="choice"
+onclick="buyProp('Apartment',6000)">
+
+<b>🏢 Apartment — $6,000</b>
+
+<small>
++ happiness • health
+</small>
+
+</button>
+
+<button class="choice"
+onclick="buyProp('House',18000)">
+
+<b>🏡 House — $18,000</b>
+
+<small>
++ happiness • reputation
+</small>
+
+</button>
+
+<button class="choice"
+onclick="buyProp('Penthouse',50000)">
+
+<b>🌆 Penthouse — $50,000</b>
+
+<small>
++ fame • happiness
+</small>
+
+</button>
+
+</div>
+
+`);
+
+}
+
+function buyProp(type,cost){
+
+if(!spend(cost)){
+
+closeModal();
+
+render();
+
+return;
+
+}
+
+s.props++;
+
+s.happiness=clamp(
+s.happiness+8
+);
+
+s.rep=clamp(
+s.rep+5
+);
+
+if(type==='Penthouse')
+s.fame=clamp(s.fame+10);
+
+closeModal();
+
+log(
+`You bought a ${type}. Your lifestyle leveled up.`,
+'success'
+);
+
+render();
+
+}
+
+function randomEvent(){
+
+let r=Math.random();
+
+if(r<.12){
+
+s.money=Math.max(
+0,
+s.money-300
+);
+
+s.health=clamp(
+s.health-5
+);
+
+log(
+'A surprise expense hit: <strong>$300</strong> disappeared.',
+'danger'
+);
+
+}
+
+else if(r<.24){
+
+s.fame=clamp(
+s.fame+6
+);
+
+log(
+'A clip of you went viral. Fame +6.',
+'success'
+);
+
+}
+
+else if(r<.34){
+
+s.heat=clamp(
+s.heat+8
+);
+
+log(
+'Authorities increased patrols around your usual spots. Heat +8.',
+'danger'
+);
+
+}
+
+else if(r<.43){
+
+s.money+=500;
+
+log(
+'Someone paid back an old favor: <strong>$500</strong>.',
+'success'
+);
+
+}
+
+else if(r<.52){
+
+s.happiness=clamp(
+s.happiness+10
+);
+
+log(
+'A great night with your people lifted your mood.',
+'success'
+);
+
+}
+
+}
+
+function advance(){
+
+s.age++;
+
+s.year++;
+
+s.energy=clamp(
+70+Math.floor(Math.random()*20)
+);
+
+s.health=clamp(
+s.health-Math.floor(s.heat/35)
+);
+
+s.happiness=clamp(
+s.happiness+
+Math.floor(
+s.props*3-s.heat/25
+)
+);
+
+let passive=
+s.businesses*
+(
+800+
+Math.floor(Math.random()*500)
+);
+
+s.money+=passive;
+
+s.heat=clamp(
+s.heat-
+(s.age%3===0?8:3)
+);
+
+if(passive){
+
+log(
+`Another year passed. Your businesses generated <strong>${money(passive)}</strong>.`
+);
+
+}else{
+
+log(
+'Another year passed. The city changed, and so did you.'
+);
+
+}
+
+randomEvent();
+
+if(
+s.heat>90 &&
+Math.random()<.3
+){
+
+s.arrests++;
+
+s.money=
+Math.floor(
+s.money*.55
+);
+
+s.heat=35;
+
+s.happiness=
+clamp(
+s.happiness-15
+);
+
+log(
+'🚔 You were arrested in a fictional story event. You paid the price and kept moving.',
+'danger'
+);
+
+}
+
+render();
+
+saveGame(true);
+
+}
+
+function showProfile(){
+
+openModal(`
+
+<h2>👤 L3EON — LIFE PROFILE</h2>
+
+<p><b>Age:</b> ${s.age}</p>
+
+<p><b>Wealth:</b> ${money(s.money)}</p>
+
+<p><b>Fame:</b> ${Math.round(s.fame)}/100</p>
+
+<p><b>Reputation:</b> ${Math.round(s.rep)}/100</p>
+
+<p>
+<b>Crew:</b> ${s.crew}<br>
+<b>Properties:</b> ${s.props}<br>
+<b>Businesses:</b> ${s.businesses}<br>
+<b>Arrests:</b> ${s.arrests}
+</p>
+
+<p class="muted">
+Your legacy is shaped by your choices.
+</p>
+
+`);
+
+}
+
+function saveGame(silent=false){
+
+localStorage.setItem(
+KEY,
+JSON.stringify(s)
+);
+
+if(!silent){
+
+log(
+'Game saved to this device.',
+'success'
+);
+
+}
+
+render();
+
+}
+
+function loadGame(){
+
+let x=
+localStorage.getItem(KEY);
+
+if(!x){
+
+log(
+'No save found on this device.',
+'danger'
+);
+
+return;
+
+}
+
+s=
+JSON.parse(x);
+
+log(
+'Saved life restored.',
+'success'
+);
+
+render();
+
+}
+
+function newLife(){
+
+if(
+!confirm(
+'Start a brand new L3EON life?'
+)
+)return;
+
+localStorage.removeItem(KEY);
+
+location.reload();
+
+}
+
+function clearFeed(){
+
+s.history=[];
+
+render();
+
+}
+
+function openModal(html){
+
+$('modalBody').innerHTML=html;
+
+$('modal').classList.add('open');
+
+}
+
+function closeModal(){
+
+$('modal').classList.remove('open');
+
+}
+
+$('modal').addEventListener(
+'click',
+e=>{
+
+if(e.target.id==='modal')
+closeModal();
+
+}
+);
+
+let old=
+localStorage.getItem(KEY);
+
+if(old){
+
+try{
+
+s=
+Object.assign(
+s,
+JSON.parse(old)
+);
+
+}catch(e){}
+
+}
+
+log(
+'Welcome to UNDERWORLD: L3EON. Build your life, manage your risk, and make your name mean something.'
+);
+
+render();
+
+</script>
+
+</body>
+</html>
