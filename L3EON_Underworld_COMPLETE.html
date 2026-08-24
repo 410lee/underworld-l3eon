@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0a0610">
+<title>UNDERWORLD: L3EON — Complete Edition</title>
+<style>
+:root{--bg:#07050b;--panel:#120c18;--panel2:#0e0913;--line:#432052;--line2:#5f2d78;--purple:#b84cff;--pink:#e35ce7;--text:#f8f4fb;--muted:#a99fb1;--good:#72e39a;--bad:#ff6f7c;--gold:#ffd65c;--blue:#76b8ff;--orange:#ff9a6a}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 50% -5%,#4b175e 0,#1a0c24 28%,#09060d 67%,#050408 100%);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}button,input,select{font:inherit}button{color:inherit;cursor:pointer}.wrap{max-width:1100px;margin:auto;padding:16px 14px 80px}.top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:12px}.logo{font-size:38px;font-weight:950;letter-spacing:-2.5px}.logo span{color:var(--purple)}.age{border:1px solid #78419a;background:#120b19;border-radius:999px;padding:12px 19px;font-weight:900}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:9px}.stat,.card{background:linear-gradient(180deg,rgba(22,15,29,.98),rgba(12,9,17,.98));border:1px solid #33203d;border-radius:20px;box-shadow:0 8px 28px rgba(0,0,0,.16)}.stat{padding:12px 13px}.stat small{display:block;color:var(--muted);font-weight:850;font-size:12px}.stat strong{display:block;font-size:26px;margin-top:4px}.money{color:var(--good)}.fame{color:var(--gold)}.heat{color:var(--orange)}.card{padding:17px;margin-top:13px}.hero{background:radial-gradient(circle at 85% 15%,rgba(183,76,255,.18),transparent 35%),linear-gradient(180deg,#16101d,#0d0912)}.eyebrow{color:#cb68ff;font-size:11px;font-weight:950;letter-spacing:1.7px}.hero h1{font-size:32px;margin:6px 0 8px}.hero p{max-width:850px}.hrow{display:flex;gap:9px;flex-wrap:wrap}.pill{padding:7px 10px;border:1px solid #4c2a5e;border-radius:999px;color:#d8b8e5;font-size:12px;font-weight:850}.grid2{display:grid;grid-template-columns:1.25fr 1fr;gap:13px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:9px}.barrow{margin:12px 0}.barhead{display:flex;justify-content:space-between;gap:10px;margin-bottom:5px}.bar{height:8px;background:#24172d;border-radius:999px;overflow:hidden}.fill{height:100%;background:linear-gradient(90deg,#8a43ff,#e456d8);border-radius:999px}.info{display:grid;grid-template-columns:1fr 1fr;gap:8px}.info div,.mini{padding:10px;border:1px solid #2e1d38;border-radius:13px;color:var(--muted);background:#100b15}.info b,.mini b{color:var(--text)}h1,h2,h3{line-height:1.1}h2{font-size:21px;margin:0 0 12px}h3{margin:0 0 7px;font-size:16px}p{color:var(--muted);line-height:1.5}.actions{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.btn{border:1px solid #552773;background:#151020;border-radius:13px;padding:12px 10px;font-weight:850;min-height:48px;transition:.15s}.btn:hover{border-color:#c35cff;transform:translateY(-1px)}.btn:active{transform:translateY(0)}.btn.primary{background:linear-gradient(135deg,#8645ed,#d24ed1);border:0}.btn.good{border-color:#27724c}.btn.danger{border-color:#7d2939}.btn.gold{border-color:#80652b}.btn:disabled{opacity:.45;cursor:not-allowed;transform:none}.tabs{position:sticky;top:0;z-index:10;display:flex;gap:7px;overflow:auto;padding:8px 0;background:linear-gradient(#0a0610 70%,transparent);margin-bottom:-1px}.tab{white-space:nowrap;border:1px solid #3d2350;background:#100a15;border-radius:999px;padding:8px 13px;font-weight:850;color:#bcb1c5}.tab.active{background:#8b43df;color:#fff;border-color:#a94dff}.section{scroll-margin-top:60px}.feed{max-height:420px;overflow:auto}.feed div{padding:10px 0;border-bottom:1px solid #21152a;color:#d8d0df}.feed div:first-child{color:#fff}.list{display:grid;gap:8px}.listrow{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:11px;border:1px solid #2e1d38;border-radius:13px;background:#100b15}.tag{display:inline-block;padding:4px 8px;border:1px solid #53306a;border-radius:999px;color:#d8b7e8;font-size:10px;font-weight:900}.muted{color:var(--muted)}.empty{padding:20px;text-align:center;color:#7f7486}.event{position:fixed;inset:0;background:rgba(0,0,0,.78);display:none;align-items:center;justify-content:center;padding:18px;z-index:50}.modal{width:min(680px,100%);max-height:90vh;overflow:auto;background:#100a15;border:1px solid #713594;border-radius:24px;padding:21px;box-shadow:0 30px 100px #000}.choice{display:grid;gap:8px;margin-top:15px}.toast{position:fixed;left:50%;bottom:18px;transform:translateX(-50%);background:#18111e;border:1px solid #66357e;border-radius:999px;padding:10px 16px;display:none;z-index:70;box-shadow:0 10px 35px #0008}.footer{text-align:center;color:#6e6377;font-size:11px;margin-top:18px}.notice{padding:10px 12px;border-radius:12px;background:#160e1d;border:1px solid #392343;color:#c9bdcf}.notice.good{border-color:#24583e}.notice.warn{border-color:#624a25}.small{font-size:12px}.moneyline{color:var(--good);font-weight:900}.red{color:var(--bad)}.gold{color:var(--gold)}
+@media(max-width:760px){.stats{grid-template-columns:repeat(2,1fr)}.grid2,.grid3,.grid4{grid-template-columns:1fr}.actions{grid-template-columns:repeat(2,1fr)}.logo{font-size:32px}.hero h1{font-size:27px}.stat strong{font-size:23px}.wrap{padding-left:10px;padding-right:10px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top"><div class="logo">L3<span>EON</span></div><div class="age" id="age">AGE 18</div></div>
+  <div class="tabs">
+    <button class="tab active" onclick="jump('home')">🏠 Home</button>
+    <button class="tab" onclick="jump('career')">🎤 Career</button>
+    <button class="tab" onclick="jump('people')">❤️ People</button>
+    <button class="tab" onclick="jump('empire')">🏙️ Empire</button>
+    <button class="tab" onclick="jump('legacy')">🏆 Legacy</button>
+  </div>
+
+  <section id="home" class="section">
+    <div class="stats">
+      <div class="stat"><small>💵 MONEY</small><strong class="money" id="money">$500</strong></div>
+      <div class="stat"><small>❤️ HEALTH</small><strong id="health">80</strong></div>
+      <div class="stat"><small>⭐ FAME</small><strong class="fame" id="fame">0</strong></div>
+      <div class="stat"><small>🚨 HEAT</small><strong class="heat" id="heat">0</strong></div>
+      <div class="stat"><small>😊 HAPPINESS</small><strong id="happy">70</strong></div>
+      <div class="stat"><small>⚡ ENERGY</small><strong id="energy">80</strong></div>
+      <div class="stat"><small>🗣️ REPUTATION</small><strong id="rep">10</strong></div>
+      <div class="stat"><small>👥 CREW</small><strong id="crew">0</strong></div>
+    </div>
+
+    <section class="card hero">
+      <div class="eyebrow">BALTIMORE • FICTIONAL UNDERWORLD LIFE SIM</div>
+      <h1>UNDERWORLD: L3EON — COMPLETE EDITION</h1>
+      <p>Start with almost nothing and build a life people remember. Balance music, work, relationships, education, property, businesses, reputation and risky fictional choices. Every year changes the story.</p>
+      <div class="hrow"><span class="pill">📍 <b id="location">Neighborhood</b></span><span class="pill">📅 YEAR <b id="year">1</b></span><span class="pill">🎤 MUSIC <b id="musicLevel">55</b></span><span class="pill">🏠 PROPERTIES <b id="properties">0</b></span><span class="pill">🏢 BUSINESSES <b id="businesses">0</b></span></div>
+    </section>
+
+    <div class="grid2">
+      <section class="card"><h2>📊 CHARACTER</h2>
+        <div class="barrow"><div class="barhead"><span>🧠 Intelligence</span><b id="intelligence">60</b></div><div class="bar"><div class="fill" id="intelligenceBar"></div></div></div>
+        <div class="barrow"><div class="barhead"><span>👀 Looks</span><b id="looks">65</b></div><div class="bar"><div class="fill" id="looksBar"></div></div></div>
+        <div class="barrow"><div class="barhead"><span>🎤 Music Talent</span><b id="musicTalent">55</b></div><div class="bar"><div class="fill" id="musicTalentBar"></div></div></div>
+        <div class="barrow"><div class="barhead"><span>💪 Fitness</span><b id="fitness">50</b></div><div class="bar"><div class="fill" id="fitnessBar"></div></div></div>
+      </section>
+      <section class="card"><h2>🏙️ CITY</h2><p id="cityText">The neighborhood knows your name. Your next move is yours.</p><div class="info"><div>📍 <b id="cityLocation">Neighborhood</b></div><div>👥 Crew <b id="crew2">0</b></div><div>🏠 Properties <b id="properties2">0</b></div><div>🏢 Businesses <b id="businesses2">0</b></div></div></section>
+    </div>
+
+    <section class="card"><h2>🎮 WHAT DO YOU DO?</h2><div class="actions">
+      <button class="btn" onclick="work()">💼 Work</button><button class="btn" onclick="hustle()">💵 Hustle</button><button class="btn" onclick="train()">🏋️ Train</button>
+      <button class="btn" onclick="rest()">🛏️ Rest</button><button class="btn" onclick="explore()">🚗 Explore</button><button class="btn" onclick="study()">📚 Study</button>
+      <button class="btn" onclick="recruit()">👥 Crew</button><button class="btn" onclick="property()">🏠 Property</button><button class="btn primary" onclick="ageUp()">⏭️ Age Up</button>
+    </div></section>
+
+    <section class="card"><h2>📰 CITY FEED</h2><div class="feed" id="feed"></div></section>
+  </section>
+
+  <section id="career" class="section">
+    <section class="card"><h2>🎤 MUSIC CAREER</h2><div class="grid4">
+      <div class="mini">🎵 Songs<br><b id="songs">0</b></div><div class="mini">💿 Albums<br><b id="albums">0</b></div><div class="mini">🎟️ Shows<br><b id="concerts">0</b></div><div class="mini">🏆 Awards<br><b id="awards">0</b></div>
+    </div><div class="actions" style="margin-top:9px"><button class="btn" onclick="recordSong()">🎙️ Record</button><button class="btn" onclick="releaseSong()">🎧 Release</button><button class="btn" onclick="makeAlbum()">💿 Album</button><button class="btn" onclick="tour()">🚌 Tour</button><button class="btn" onclick="labelAction()">🏷️ Label</button><button class="btn" onclick="awardAction()">🏆 Awards</button></div></section>
+    <section class="card"><h2>🎓 EDUCATION & CAREER</h2><div class="grid3"><div class="mini">🎓 Education<br><b id="education">High School</b></div><div class="mini">💼 Career<br><b id="career">Unemployed</b></div><div class="mini">💰 Salary<br><b id="salary">$0/yr</b></div></div><div class="actions" style="margin-top:9px"><button class="btn" onclick="educationAction()">📚 Education</button><button class="btn" onclick="jobAction()">🧑‍💼 Career</button><button class="btn" onclick="quitJob()">🚪 Quit Job</button></div></section>
+    <section class="card"><h2>🎵 RELEASES</h2><div id="releases" class="list"></div></section>
+  </section>
+
+  <section id="people" class="section">
+    <section class="card"><h2>❤️ RELATIONSHIPS</h2><div class="grid4"><div class="mini">💕 Partner<br><b id="partner">Single</b></div><div class="mini">👫 Friends<br><b id="friends">0</b></div><div class="mini">👪 Family<br><b id="family">Good</b></div><div class="mini">💔 Exes<br><b id="exes">0</b></div></div><div class="actions" style="margin-top:9px"><button class="btn" onclick="dateAction()">💘 Date</button><button class="btn" onclick="socialize()">🥂 Socialize</button><button class="btn" onclick="familyAction()">🏡 Family</button><button class="btn" onclick="breakup()">💔 Relationship</button></div></section>
+    <section class="card"><h2>👤 PEOPLE IN YOUR LIFE</h2><div id="peopleList" class="list"></div></section>
+  </section>
+
+  <section id="empire" class="section">
+    <section class="card"><h2>🏙️ EMPIRE</h2><div class="grid4"><div class="mini">💳 Bank<br><b id="bank">$0</b></div><div class="mini">🏠 Property Value<br><b id="propertyValue">$0</b></div><div class="mini">🏢 Business Income<br><b id="businessIncome">$0/yr</b></div><div class="mini">🚗 Vehicle<br><b id="vehicle">None</b></div></div><div class="actions" style="margin-top:9px"><button class="btn" onclick="business()">🏢 Buy Business</button><button class="btn" onclick="property()">🏠 Buy Property</button><button class="btn" onclick="vehicleAction()">🚗 Vehicle</button><button class="btn" onclick="bankAction()">🏦 Bank</button></div></section>
+    <section class="card"><h2>⚖️ LEGAL & REPUTATION</h2><div class="grid4"><div class="mini">🚨 Heat<br><b id="heat2">0</b></div><div class="mini">📋 Record<br><b id="legal">Clean Record</b></div><div class="mini">🗣️ Rep<br><b id="rep2">10</b></div><div class="mini">🕶️ Profile<br><b id="profileStatus">Unknown</b></div></div><div class="actions" style="margin-top:9px"><button class="btn" onclick="legalHelp()">⚖️ Legal Help</button><button class="btn" onclick="layLow()">🕶️ Lay Low</button><button class="btn" onclick="publicity()">📣 Publicity</button></div></section>
+    <section class="card"><h2>👥 CREW</h2><div class="grid3"><div class="mini">Members<br><b id="crew3">0</b></div><div class="mini">Loyalty<br><b id="loyalty">0</b></div><div class="mini">Upkeep<br><b id="crewCost">$0/yr</b></div></div><div id="crewList" class="list" style="margin-top:9px"></div></section>
+  </section>
+
+  <section id="legacy" class="section">
+    <section class="card"><h2>🏆 YOUR LEGACY</h2><div class="grid4"><div class="mini">🌟 Status<br><b id="status">Unknown</b></div><div class="mini">📅 Age<br><b id="age2">18</b></div><div class="mini">💰 Net Worth<br><b id="networth">$500</b></div><div class="mini">🎯 Achievements<br><b id="achievementCount">0</b></div></div><div id="achievements" class="list" style="margin-top:9px"></div></section>
+    <section class="card"><h2>💾 SAVE & LIFE</h2><div class="actions"><button class="btn good" onclick="saveGame()">💾 Save Game</button><button class="btn" onclick="loadGame()">📂 Load Game</button><button class="btn" onclick="profile()">👤 Life Profile</button><button class="btn danger" onclick="newLife()">🔄 New Life</button></div><div class="notice small" style="margin-top:10px">Your save stays in this browser using local storage. This game is fictional and does not provide real-world criminal instructions.</div></section>
+  </section>
+
+  <div class="footer">UNDERWORLD: L3EON • Complete Edition • Fictional game • No real-world instructions</div>
+</div>
+
+<div class="event" id="event"><div class="modal"><div class="eyebrow" id="eventTag">CITY EVENT</div><h1 id="eventTitle">Event</h1><p id="eventText"></p><div class="choice" id="choices"></div></div></div>
+<div class="toast" id="toast"></div>
+
+<script>
+const KEY="underworldL3EON_COMPLETE_v1";
+const clamp=n=>Math.max(0,Math.min(100,Math.round(n)));
+const money=n=>"$"+Math.max(0,Math.round(n)).toLocaleString();
+const rand=(a,b)=>Math.floor(Math.random()*(b-a+1))+a;
+const pick=a=>a[Math.floor(Math.random()*a.length)];
+const fresh=()=>({
+ age:18,year:1,money:500,bank:0,health:80,happy:70,energy:80,fame:0,heat:0,rep:10,
+ intelligence:60,looks:65,musicTalent:55,fitness:50,musicLevel:55,
+ location:"Neighborhood",properties:0,businesses:0,propertyValue:0,businessIncome:0,vehicle:"None",
+ crew:0,loyalty:0,partner:"Single",friends:0,exes:0,family:"Good",education:"High School",career:"Unemployed",salary:0,legal:"Clean Record",
+ songs:0,albums:0,concerts:0,awards:0,recordLabel:"Independent",releases:[],people:[],crewList:[],achievements:[],feed:[],gameOver:false,
+ lifetime:{earned:0,spent:0,years:0,events:0}
+});
+let s=fresh();
+const $=id=>document.getElementById(id);
+function log(x){s.feed.unshift(x);s.feed=s.feed.slice(0,40)}
+function toast(x){const t=$("toast");t.textContent=x;t.style.display="block";clearTimeout(window._toast);window._toast=setTimeout(()=>t.style.display="none",1800)}
+function spend(n){if(s.money<n){toast("You need "+money(n)+".");return false}s.money-=n;s.lifetime.spent+=n;return true}
+function earn(n){n=Math.max(0,Math.round(n));s.money+=n;s.lifetime.earned+=n}
+function energy(n){if(s.energy<n){toast("Not enough energy.");return false}s.energy-=n;return true}
+function addPerson(name,type,rel=50){let p={name,type,rel};s.people.push(p);return p}
+function addCrewMember(name,role,loyalty=50){let p={name,role,loyalty};s.crewList.push(p);return p}
+function migrateSave(){
+ if(!Array.isArray(s.people))s.people=[]; if(!Array.isArray(s.crewList))s.crewList=[];
+ if(s.partner&&s.partner!=="Single"&&!s.people.some(p=>p.name===s.partner))addPerson(s.partner,"Partner",70);
+ const fn=["Dre","Mo","Tay","Jay","Nico","Reese","Mia","Cam","Jordan","Dev","Kris","Ty"];
+ let fc=s.people.filter(p=>p.type==="Friend").length; for(let i=fc;i<s.friends;i++){let n=fn[i%fn.length];if(s.people.some(p=>p.name===n))n+=" "+(i+1);addPerson(n,"Friend",rand(45,85));}
+ const en=["Alex","Jordan","Sam","Chris","Taylor","Riley"];
+ let ec=s.people.filter(p=>p.type==="Ex").length; for(let i=ec;i<s.exes;i++){let n=en[i%en.length];if(s.people.some(p=>p.name===n))n+=" "+(i+1);addPerson(n,"Ex",rand(20,55));}
+ const cn=["Dre","Mo","Tay","Jay","Nico","Reese","Cam","Dev"],roles=["Right Hand","Manager","Security","Road Manager","Creative","Driver","Assistant","Business Partner"];
+ for(let i=s.crewList.length;i<s.crew;i++){let n=cn[i%cn.length];if(s.crewList.some(p=>p.name===n))n+=" "+(i+1);addCrewMember(n,roles[i%roles.length],clamp(s.loyalty+rand(5,20)));}
+ s.friends=Math.max(s.friends,s.people.filter(p=>p.type==="Friend").length);s.exes=Math.max(s.exes,s.people.filter(p=>p.type==="Ex").length);s.crew=Math.max(s.crew,s.crewList.length);
+}
+function addAchievement(name,desc){if(!s.achievements.some(a=>a.name===name)){s.achievements.push({name,desc,age:s.age});log("🏆 Achievement unlocked: "+name+".")}}
+function jump(id){document.getElementById(id).scrollIntoView({behavior:"smooth",block:"start"})}
+
+function work(){if(!energy(12))return;let base=s.career==="Unemployed"?120:s.salary||350;let gain=rand(Math.floor(base*.75),Math.floor(base*1.15));earn(gain);s.happy=clamp(s.happy+1);s.rep=clamp(s.rep+1);log("💼 You worked and earned "+money(gain)+".");if(s.career!=="Unemployed"&&Math.random()<.12){s.salary+=rand(50,150);log("📈 Your performance earned you a raise.")}render()}
+function hustle(){if(!energy(15))return;let r=Math.random();if(r<.18){let loss=rand(100,450);s.money=Math.max(0,s.money-loss);s.heat=clamp(s.heat+rand(4,12));s.rep=clamp(s.rep-2);log("🚨 A fictional risky opportunity went sideways. You lost "+money(loss)+" and picked up heat.")}else{let gain=rand(150,700);earn(gain);s.rep=clamp(s.rep+2);if(Math.random()<.35)s.heat=clamp(s.heat+rand(1,5));log("💵 You took a fictional high-risk opportunity and came away with "+money(gain)+".")}render()}
+function train(){if(!energy(15))return;s.fitness=clamp(s.fitness+rand(2,5));s.health=clamp(s.health+rand(1,3));s.happy=clamp(s.happy+1);log("🏋️ You trained. Fitness and health improved.");render()}
+function rest(){s.energy=clamp(s.energy+35);s.health=clamp(s.health+5);s.happy=clamp(s.happy+4);log("🛏️ You took time to recover.");render()}
+function explore(){if(!energy(8))return;let places=["Downtown","The Strip","Harbor","Westside","Eastside","Midtown","Waterfront"];let place=pick(places);s.location=place;let gain=rand(50,280);earn(gain);s.rep=clamp(s.rep+1);if(Math.random()<.12)s.fame=clamp(s.fame+1);log("🚗 You explored "+place+" and found an opportunity worth "+money(gain)+".");render()}
+function study(){if(!energy(10))return;s.intelligence=clamp(s.intelligence+rand(1,4));s.happy=clamp(s.happy-1);log("📚 You studied and sharpened your mind.");render()}
+function recordSong(){if(!energy(10))return;let cost=75+Math.floor(s.musicLevel*1.2);if(!spend(cost))return;s.songs++;s.musicLevel=clamp(s.musicLevel+rand(2,5));s.happy=clamp(s.happy+2);log("🎙️ You recorded a new song for "+money(cost)+".");render()}
+function releaseSong(){if(s.songs<1)return toast("Record a song first.");if(!energy(8))return;let gain=rand(2,6)+Math.floor(s.musicLevel/30);let cash=rand(100,300)+s.musicLevel*4;s.fame=clamp(s.fame+gain);s.rep=clamp(s.rep+1);earn(cash);s.releases.unshift({type:"Single",title:"Untitled Track #"+s.songs,age:s.age,impact:gain});log("🎧 You released a single. Fame +"+gain+" and you earned "+money(cash)+".");if(s.fame>=25)addAchievement("First Buzz","Your music started getting real attention.");render()}
+function makeAlbum(){if(s.songs<3)return toast("You need at least 3 recorded songs.");if(!energy(15)||!spend(350))return;s.albums++;s.fame=clamp(s.fame+rand(6,12));s.rep=clamp(s.rep+4);let cash=rand(500,900)+s.musicLevel*8;earn(cash);s.releases.unshift({type:"Album",title:"L3EON Album #"+s.albums,age:s.age,impact:8});if(s.fame>=50)addAchievement("Album Era","You released a project that changed your career.");log("💿 Your album dropped and brought in "+money(cash)+".");render()}
+function tour(){if(s.albums<1)return toast("Release an album before touring.");if(!energy(25)||!spend(700))return;s.concerts+=rand(3,6);let fame=rand(7,14);s.fame=clamp(s.fame+fame);s.rep=clamp(s.rep+5);let cash=rand(1200,2200)+s.fame*12;earn(cash);log("🚌 Your tour wrapped successfully. You earned "+money(cash)+" and gained fame.");if(s.concerts>=10)addAchievement("Road Warrior","You played 10+ shows.");render()}
+function labelAction(){if(s.recordLabel!=="Independent")return toast("You already have a label deal.");if(s.fame<30)return toast("Build at least 30 fame first.");let offers=["Midnight Records","Harbor Sound","Purple Room Music"];let label=pick(offers);s.recordLabel=label;s.salary+=500;earn(1000);s.rep=clamp(s.rep+6);log("🏷️ "+label+" offered you a fictional record deal. You signed.");render()}
+function awardAction(){if(s.fame<50)return toast("You need more fame before awards season.");let chance=.2+s.fame/250;if(Math.random()<chance){s.awards++;s.fame=clamp(s.fame+5);s.happy=clamp(s.happy+10);addAchievement("Award Winner","You took home a major fictional music award.");log("🏆 You won a fictional music award!")}else log("🏆 You attended awards season but went home empty-handed.");render()}
+function educationAction(){if(s.education==="College")return toast("You've already completed college.");if(s.age<18)return toast("You're too young for college.");let cost=4500;if(!spend(cost))return;s.education="College";s.intelligence=clamp(s.intelligence+12);s.salary=Math.max(s.salary,500);s.happy=clamp(s.happy-2);log("🎓 You completed college. Intelligence increased and better careers opened up.");render()}
+function jobAction(){if(s.career!=="Unemployed")return toast("You already have a career.");let jobs=s.education==="College"?["Engineer","Manager","Creative Director","Marketing Specialist"]:["Retail Associate","Security Guard","Assistant","Warehouse Worker"];s.career=pick(jobs);s.salary=s.education==="College"?rand(2200,4200):rand(1200,2200);log("🧑‍💼 You landed a job as a "+s.career+" earning about "+money(s.salary)+" per year.");render()}
+function quitJob(){if(s.career==="Unemployed")return toast("You don't have a job.");log("🚪 You left your job as a "+s.career+".");s.career="Unemployed";s.salary=0;render()}
+function dateAction(){if(s.partner!=="Single")return toast("You're already in a relationship.");if(!energy(8)||!spend(80))return;let names=["Ari","Maya","Jade","Nia","Tori","Sam","Kai"];let name=pick(names);let p=addPerson(name,"Partner",rand(45,75));if(p.rel>=55){s.partner=name;s.happy=clamp(s.happy+10);s.rep=clamp(s.rep+1);log("💕 You started dating "+name+".")}else{p.type="Date";s.happy=clamp(s.happy+2);log("💘 You went on a date with "+name+", but it stayed casual.")}render()}
+function socialize(){if(!energy(5))return;s.friends=Math.min(15,s.friends+1);s.happy=clamp(s.happy+4);if(Math.random()<.35){let names=["Dre","Mo","Tay","Jay","Nico","Reese"];let n=pick(names);if(!s.people.some(p=>p.name===n))addPerson(n,"Friend",rand(40,80));}log("🥂 You socialized. Your circle is now "+s.friends+" friends.");render()}
+function familyAction(){if(!energy(4))return;s.happy=clamp(s.happy+6);s.family=s.family==="Strained"?"Good":"Great";log("🏡 You made time for family.");render()}
+function breakup(){if(s.partner==="Single")return toast("You're single.");let old=s.partner;s.partner="Single";s.exes++;s.family=s.family;let p=s.people.find(x=>x.name===old);if(p)p.type="Ex";s.happy=clamp(s.happy-8);log("💔 You and "+old+" broke up.");render()}
+function business(){if(s.businesses>=6)return toast("Your empire has reached the current business cap.");let cost=2500+s.businesses*3000;if(!spend(cost))return;let names=["Studio Lounge","Clothing Brand","Coffee Shop","Creative Agency","Event Company","Tech Startup"];let name=names[s.businesses];s.businesses++;s.businessIncome+=700+s.businesses*350;s.rep=clamp(s.rep+5);s.happy=clamp(s.happy+3);log("🏢 You opened "+name+". It now contributes to your yearly income.");if(s.businesses>=3)addAchievement("Business Owner","You built a three-business portfolio.");render()}
+function property(){if(s.properties>=8)return toast("You own the current property cap.");let cost=3000+s.properties*4200;if(!spend(cost))return;s.properties++;s.propertyValue+=cost+rand(500,1500);s.happy=clamp(s.happy+3);s.rep=clamp(s.rep+4);log("🏠 You bought property worth about "+money(cost)+".");if(s.properties>=3)addAchievement("Property Portfolio","You own three properties.");render()}
+function vehicleAction(){if(s.vehicle!=="None")return toast("You already own a vehicle.");let vehicles=["Used Sedan","Sport Coupe","Luxury SUV","Custom Classic"];let costs=[4500,12000,26000,40000];let i=s.fame>=60?3:s.fame>=35?2:s.fame>=15?1:0;if(!spend(costs[i]))return;s.vehicle=vehicles[i];s.happy=clamp(s.happy+4);log("🚗 You bought a "+s.vehicle+".");render()}
+function bankAction(){let amount=Math.min(s.money,rand(100,Math.max(100,s.money)));if(amount<=0)return toast("You don't have spare cash.");s.money-=amount;s.bank+=amount;log("🏦 You moved "+money(amount)+" into your bank account.");render()}
+function recruit(){if(s.crew>=8)return toast("Crew is full.");let cost=500+s.crew*450;if(!spend(cost))return;let names=["Dre","Mo","Taz","Rico","Jay","Nico","Reese","Kell"];let n=names[s.crew];s.crew++;s.loyalty=clamp(s.loyalty+8);s.crewList.push({name:n,role:pick(["Driver","Manager","Creative","Security","Promoter"]),loyalty:rand(55,85)});log("👥 "+n+" joined your fictional crew. Loyalty increased.");render()}
+function legalHelp(){if(s.heat===0)return toast("You have no active heat.");let cost=500+s.heat*35;if(!spend(cost))return;s.heat=Math.max(0,s.heat-20);s.legal="Under Review";log("⚖️ You hired fictional legal help. Heat dropped.");render()}
+function layLow(){if(!energy(15))return;s.heat=Math.max(0,s.heat-10);s.rep=clamp(s.rep-1);log("🕶️ You stayed out of the spotlight. Heat cooled down.");render()}
+function publicity(){if(!energy(8))return;let cash=rand(100,400);earn(cash);s.fame=clamp(s.fame+rand(2,5));s.heat=clamp(s.heat+2);log("📣 You pushed your public profile and earned "+money(cash)+".");render()}
+
+const events=[
+ {tag:"MUSIC",title:"A Promoter Calls",text:"A fictional promoter heard your music and wants you on a showcase.",choices:[["Take the show",()=>{s.fame=clamp(s.fame+6);earn(350);s.energy=Math.max(0,s.energy-12);s.concerts++;log("🎤 You performed at a showcase and made $350. Fame increased.")}],["Pass",()=>{s.happy=clamp(s.happy+2);log("📵 You passed and kept your schedule clear.")}]]},
+ {tag:"LIFE",title:"Unexpected Bills",text:"A surprise expense lands at the worst possible time.",choices:[["Pay it",()=>{let x=rand(250,700);s.money=Math.max(0,s.money-x);s.happy=clamp(s.happy-2);log("💸 You paid "+money(x)+" in unexpected expenses.")}],["Cut back",()=>{s.happy=clamp(s.happy-6);s.energy=clamp(s.energy+8);log("🧾 You cut back and kept the cash, but it wasn't fun.")}]]},
+ {tag:"RELATIONSHIP",title:"Your Partner Wants More Time",text:"Your personal life is competing with your ambition.",choices:[["Make time",()=>{s.happy=clamp(s.happy+8);s.energy=Math.max(0,s.energy-6);log("💕 You made time for your partner. The relationship got stronger.")}],["Choose work",()=>{let old=s.partner;s.partner="Single";s.exes++;s.happy=clamp(s.happy-10);log("💔 You chose work over "+old+". The relationship ended.")}]]},
+ {tag:"CAREER",title:"A Career Break",text:"Your work has been noticed and a better opportunity is available.",choices:[["Accept promotion",()=>{s.salary+=700;earn(500);s.rep=clamp(s.rep+4);log("📈 You moved up and got a raise.")}],["Focus on music",()=>{s.musicLevel=clamp(s.musicLevel+4);s.happy=clamp(s.happy+3);log("🎤 You chose music over the promotion.")}]]},
+ {tag:"CITY",title:"Unexpected Attention",text:"Your name is spreading. Attention can become opportunity—or pressure.",choices:[["Lean into it",()=>{s.fame=clamp(s.fame+5);s.rep=clamp(s.rep+4);s.heat=clamp(s.heat+5);log("⭐ You leaned into the spotlight. Fame rose, but heat rose too.")}],["Stay low",()=>{s.heat=Math.max(0,s.heat-6);s.energy=clamp(s.energy+5);log("🕶️ You stayed low and let the noise cool down.")}]]},
+ {tag:"CREW",title:"Crew Needs Direction",text:"Your people are looking to you for leadership.",choices:[["Invest in loyalty",()=>{let x=300+s.crew*100;if(s.money>=x){s.money-=x;s.loyalty=clamp(s.loyalty+10);s.rep=clamp(s.rep+5);log("👥 You invested "+money(x)+" into your crew and strengthened loyalty.")}else toast("Not enough money.")}],["Keep the cash",()=>{s.loyalty=clamp(s.loyalty-7);s.rep=clamp(s.rep-2);log("💰 You kept the cash. Your crew noticed.")}]]},
+ {tag:"FAMILY",title:"Family Needs You",text:"Someone in your family needs your attention during a busy week.",choices:[["Show up",()=>{s.happy=clamp(s.happy+9);s.family="Great";log("🏡 You showed up for family.")}],["Send money",()=>{let x=300;if(spend(x)){s.happy=clamp(s.happy+4);log("💸 You helped your family with "+money(x)+".")}else toast("You couldn't afford it.")}]]},
+ {tag:"MUSIC",title:"A Viral Moment",text:"A clip from your performance starts spreading online.",choices:[["Capitalize",()=>{s.fame=clamp(s.fame+12);earn(700);s.heat=clamp(s.heat+2);addAchievement("Viral Moment","A performance changed your trajectory.");log("🔥 Your performance went viral. Fame exploded.")}],["Ignore it",()=>{s.happy=clamp(s.happy+2);log("😌 You ignored the hype and stayed focused.")}]]},
+ {tag:"HEALTH",title:"Burnout",text:"You've been pushing too hard and your body is asking for a reset.",choices:[["Rest",()=>{s.health=clamp(s.health+10);s.energy=clamp(s.energy+20);s.fame=clamp(s.fame-1);log("🛏️ You rested and recovered.")}],["Keep going",()=>{s.health=clamp(s.health-10);s.energy=Math.max(0,s.energy-15);s.fame=clamp(s.fame+3);log("⚡ You kept going, but your health took a hit.")}]]}
+];
+function randomEvent(){if(s.gameOver)return;let e=pick(events);s.lifetime.events++;$("eventTag").textContent=e.tag;$("eventTitle").textContent=e.title;$("eventText").textContent=e.text;$("choices").innerHTML="";e.choices.forEach(([label,fn])=>{let b=document.createElement("button");b.className="btn primary";b.textContent=label;b.onclick=()=>{fn();$("event").style.display="none";render();saveGame(true)};$("choices").appendChild(b)});$("event").style.display="flex"}
+function legalCheck(){if(s.heat>=85&&Math.random()<.4){s.legal="Court Case";s.happy=clamp(s.happy-8);s.rep=clamp(s.rep-6);s.heat=clamp(s.heat-20);log("⚖️ Your heat caught up with you. A fictional court case hit your record.")}}
+function ageUp(){if(s.gameOver)return toast("This life is over. Start a new life.");s.age++;s.year++;s.lifetime.years++;s.energy=80;s.health=clamp(s.health-2);s.happy=clamp(s.happy-1);s.heat=Math.max(0,s.heat-4);if(s.salary)earn(s.salary);if(s.businessIncome)earn(s.businessIncome);if(s.properties)earn(s.properties*180);if(s.fame>20)earn(Math.floor(s.fame*3));if(s.bank>0)earn(Math.floor(s.bank*.03));if(s.crew)earn(Math.max(0,s.crew*90));if(s.age%2===0)s.intelligence=clamp(s.intelligence+1);if(Math.random()<.35)s.musicTalent=clamp(s.musicTalent+1);legalCheck();if(s.age>=21&&s.status!=="Adult")s.status="Adult";log("📅 Another year passed. The city changed, and so did you.");if(Math.random()<.9)randomEvent();if(s.age>=70&&Math.random()<.18){s.gameOver=true;log("🕊️ Your story has reached its final chapter. Your legacy lives on.");}render();saveGame(true)}
+function status(){let score=s.fame+s.rep+s.properties*5+s.businesses*7+s.awards*12+s.musicLevel/2;return score>=250?"ICONIC":score>=160?"LEGEND":score>=90?"STAR":score>=45?"RISING NAME":"UNKNOWN"}
+function checkAchievements(){if(s.money>=10000)addAchievement("Five Figures","You reached $10,000 in cash.");if(s.money+s.bank+s.propertyValue>=50000)addAchievement("Half Century","Your net worth passed $50,000.");if(s.fame>=100)addAchievement("Household Name","You reached 100 fame.");if(s.rep>=100)addAchievement("Citywide Respect","Your reputation reached 100.");if(s.properties>=5)addAchievement("Real Estate Boss","You own five properties.");if(s.businesses>=5)addAchievement("Empire Builder","You own five businesses.");if(s.crew>=6)addAchievement("Team Captain","Your crew reached six members.");if(s.age>=30)addAchievement("The Long Game","You made it to age 30.")}
+function render(){
+ migrateSave(); checkAchievements();
+ $("age").textContent="AGE "+s.age;$("age2").textContent=s.age;$("money").textContent=money(s.money);$("health").textContent=s.health;$("fame").textContent=s.fame;$("heat").textContent=s.heat;$("heat2").textContent=s.heat;$("happy").textContent=s.happy;$("energy").textContent=s.energy;$("rep").textContent=s.rep;$("rep2").textContent=s.rep;$("crew").textContent=s.crew;$("crew2").textContent=s.crew;$("crew3").textContent=s.crew;$("year").textContent=s.year;$("location").textContent=s.location;$("cityLocation").textContent=s.location;$("musicLevel").textContent=s.musicLevel;$("properties").textContent=s.properties;$("properties2").textContent=s.properties;$("businesses").textContent=s.businesses;$("businesses2").textContent=s.businesses;
+ ["intelligence","looks","musicTalent","fitness"].forEach(k=>{$(k).textContent=s[k];$(k+"Bar").style.width=s[k]+"%"});
+ $("partner").textContent=s.partner;$("friends").textContent=s.friends;$("family").textContent=s.family;$("exes").textContent=s.exes;$("education").textContent=s.education;$("career").textContent=s.career;$("salary").textContent=s.salary?money(s.salary)+"/yr":"$0/yr";$("songs").textContent=s.songs;$("albums").textContent=s.albums;$("concerts").textContent=s.concerts;$("awards").textContent=s.awards;$("bank").textContent=money(s.bank);$("propertyValue").textContent=money(s.propertyValue);$("businessIncome").textContent=money(s.businessIncome)+"/yr";$("vehicle").textContent=s.vehicle;$("legal").textContent=s.legal;$("profileStatus").textContent=status();$("loyalty").textContent=s.loyalty;$("crewCost").textContent=money(s.crew*90)+"/yr";$("status").textContent=status();$("networth").textContent=money(s.money+s.bank+s.propertyValue);$("achievementCount").textContent=s.achievements.length;
+ $("cityText").textContent=s.fame>=75?"Your name is everywhere. The city watches your next move.":s.rep>=50?"The city knows your name and respects the work.":"The neighborhood knows your name. Your next move is yours.";
+ $("feed").innerHTML=s.feed.length?s.feed.map(x=>"<div>"+x+"</div>").join(""):"<div class='empty'>No city news yet. Make your first move.</div>";
+ $("releases").innerHTML=s.releases.length?s.releases.slice(0,12).map(r=>`<div class="listrow"><div><b>${r.title}</b><div class="muted small">${r.type} • Age ${r.age}</div></div><span class="tag">+${r.impact} FAME</span></div>`).join(""):"<div class='empty'>No releases yet.</div>";
+ $("peopleList").innerHTML=s.people.length?s.people.map(p=>`<div class="listrow"><div><b>${p.name}</b><div class="muted small">${p.type}</div></div><span class="tag">${p.rel}% RELATIONSHIP</span></div>`).join(""):"<div class='empty'>Meet people through dating and socializing.</div>";
+ $("crewList").innerHTML=s.crewList.length?s.crewList.map(p=>`<div class="listrow"><div><b>${p.name}</b><div class="muted small">${p.role}</div></div><span class="tag">${p.loyalty}% LOYAL</span></div>`).join(""):"<div class='empty'>Recruit your first crew member.</div>";
+ $("achievements").innerHTML=s.achievements.length?s.achievements.map(a=>`<div class="listrow"><div><b>🏆 ${a.name}</b><div class="muted small">${a.desc} • Age ${a.age}</div></div><span class="tag">UNLOCKED</span></div>`).join(""):"<div class='empty'>Your legacy is waiting.</div>";
+}
+function saveGame(silent=false){localStorage.setItem(KEY,JSON.stringify(s));if(!silent){log("💾 Game saved to this device.");toast("Game saved.")}}
+function loadGame(){let raw=localStorage.getItem(KEY);if(!raw)return toast("No saved game found.");try{s=Object.assign(fresh(),JSON.parse(raw));migrateSave();log("📂 Saved life restored.");render();saveGame(true);toast("Game loaded.")}catch(e){toast("Save file could not be loaded.")}}
+function profile(){alert("UNDERWORLD: L3EON\n\nAge: "+s.age+"\nStatus: "+status()+"\nCash: "+money(s.money)+"\nBank: "+money(s.bank)+"\nNet Worth: "+money(s.money+s.bank+s.propertyValue)+"\nFame: "+s.fame+"\nReputation: "+s.rep+"\nHeat: "+s.heat+"\n\nMusic: "+s.songs+" songs / "+s.albums+" albums / "+s.concerts+" shows\nCareer: "+s.career+"\nEducation: "+s.education+"\nPartner: "+s.partner+"\nCrew: "+s.crew+"\nProperties: "+s.properties+"\nBusinesses: "+s.businesses+"\nAwards: "+s.awards+"\nAchievements: "+s.achievements.length);}
+function newLife(){if(!confirm("Start a brand new L3EON LIFE? Your current save will be erased."))return;localStorage.removeItem(KEY);s=fresh();log("🌃 A brand new life begins in Baltimore.");render();saveGame(true)}
+log("🌃 Welcome to UNDERWORLD: L3EON — Complete Edition. Build your legend.");render();
+</script>
+</body>
+</html>
